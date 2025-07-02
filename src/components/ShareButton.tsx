@@ -35,10 +35,10 @@ export const ShareButton = ({ product, variant = 'icon', size = 'sm' }: ShareBut
   // Generate share text
   const generateShareText = () => {
     const price = product.minPrice === product.maxPrice 
-      ? `${product.minPrice} AED` 
-      : `${product.minPrice}-${product.maxPrice} AED`;
+      ? `${product.minPrice} USD` 
+      : `${product.minPrice}-${product.maxPrice} USD`;
     
-    return `Check out this amazing product: ${product.sku}\n\n${product.features}\n\nPrice: ${price}\n\n🚚 Free delivery in UAE\n💎 Premium quality guaranteed\n🎁 Free gifts included\n\nOrder now with cash on delivery!\n\nIntimacy Toy Shop - Dubai`;
+    return `Check out this amazing product: ${product.sku}\n\n${product.features}\n\nPrice: ${price}\n\n🔸 Free delivery in UAE\n🔸 Premium quality guaranteed\n🔸 Free gifts included\n\nOrder now with cash on delivery!\n\nIntimacy Toy Shop - Dubai`;
   };
 
   // Copy link to clipboard
@@ -56,6 +56,28 @@ export const ShareButton = ({ product, variant = 'icon', size = 'sm' }: ShareBut
       toast({
         title: "Copy Failed",
         description: "Unable to copy link. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  // Copy full text message to clipboard
+  const copyTextMessage = async () => {
+    try {
+      const text = generateShareText();
+      const url = generateProductUrl();
+      const fullMessage = `${text}\n\n${url}`;
+      await navigator.clipboard.writeText(fullMessage);
+      setCopied(true);
+      toast({
+        title: "Text Copied!",
+        description: "Product message has been copied to clipboard",
+      });
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      toast({
+        title: "Copy Failed",
+        description: "Unable to copy text. Please try again.",
         variant: "destructive",
       });
     }
@@ -133,9 +155,14 @@ export const ShareButton = ({ product, variant = 'icon', size = 'sm' }: ShareBut
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56 bg-slate-800 border-slate-700">
-          <DropdownMenuItem onClick={copyToClipboard} className="text-white hover:bg-slate-700">
+          <DropdownMenuItem onClick={copyTextMessage} className="text-white hover:bg-slate-700">
             {copied ? <Check className="w-4 h-4 mr-2 text-green-400" /> : <Copy className="w-4 h-4 mr-2" />}
-            {copied ? 'Copied!' : 'Copy Link'}
+            {copied ? 'Copied!' : 'Copy Text'}
+          </DropdownMenuItem>
+          
+          <DropdownMenuItem onClick={copyToClipboard} className="text-white hover:bg-slate-700">
+            <Copy className="w-4 h-4 mr-2" />
+            Copy Link
           </DropdownMenuItem>
           
           <DropdownMenuSeparator className="bg-slate-700" />
@@ -183,9 +210,14 @@ export const ShareButton = ({ product, variant = 'icon', size = 'sm' }: ShareBut
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 bg-slate-800 border-slate-700" align="end">
-        <DropdownMenuItem onClick={copyToClipboard} className="text-white hover:bg-slate-700">
+        <DropdownMenuItem onClick={copyTextMessage} className="text-white hover:bg-slate-700">
           {copied ? <Check className="w-4 h-4 mr-2 text-green-400" /> : <Copy className="w-4 h-4 mr-2" />}
-          {copied ? 'Copied!' : 'Copy Link'}
+          {copied ? 'Copied!' : 'Copy Text'}
+        </DropdownMenuItem>
+        
+        <DropdownMenuItem onClick={copyToClipboard} className="text-white hover:bg-slate-700">
+          <Copy className="w-4 h-4 mr-2" />
+          Copy Link
         </DropdownMenuItem>
         
         <DropdownMenuSeparator className="bg-slate-700" />
