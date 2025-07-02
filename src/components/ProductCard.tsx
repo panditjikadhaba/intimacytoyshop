@@ -123,9 +123,12 @@ export const ProductCard = ({ product, onClick }: ProductCardProps) => {
           </div>
         </div>
 
-        {/* Hover Effect - Desktop */}
-        <div className={`mt-4 text-purple-300 text-sm transition-opacity duration-300 hidden md:block ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          Tap to view details & more media →
+        {/* Quick Buy Button - Desktop */}
+        <div className="hidden md:block">
+          <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium mt-4">
+            <ShoppingCart className="w-4 h-4" />
+            GET DISCOUNT ! Chat with Agent
+          </div>
         </div>
       </div>
     </div>
