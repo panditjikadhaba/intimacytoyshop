@@ -118,7 +118,7 @@ export const ProductCard = ({ product, onClick }: ProductCardProps) => {
           <div className="md:hidden">
             <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-3 py-2 rounded-lg text-xs font-medium">
               <ShoppingCart className="w-3 h-3" />
-              GET DISCOUNT ! Chat with Agent
+              Get More Info
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ export const ProductCard = ({ product, onClick }: ProductCardProps) => {
         <div className="hidden md:block">
           <div className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium mt-4">
             <ShoppingCart className="w-4 h-4" />
-            GET DISCOUNT ! Chat with Agent
+            Get More Info
           </div>
         </div>
       </div>

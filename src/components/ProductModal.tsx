@@ -208,7 +208,7 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
                 className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium py-3 md:py-4 text-base md:text-lg rounded-xl transition-all duration-300 transform hover:scale-105"
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                GET DISCOUNT ! Chat with Agent
+                Get More Info
               </Button>
               
               <div className="grid grid-cols-1 gap-3">
