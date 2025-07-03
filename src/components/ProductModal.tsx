@@ -201,20 +201,6 @@ export const ProductModal = ({ product, isOpen, onClose }: ProductModalProps) =>
               </p>
             </div>
 
-            {/* Action Buttons */}
-            <div className="space-y-3 pt-4">
-              <Button 
-                onClick={handleBuyNow}
-                className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-medium py-3 md:py-4 text-base md:text-lg rounded-xl transition-all duration-300 transform hover:scale-105"
-              >
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Get More Info
-              </Button>
-              
-              <div className="grid grid-cols-1 gap-3">
-                <ShareButton product={product} variant="button" size="lg" />
-              </div>
-            </div>
 
             {/* Free Gifts */}
             <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl p-4 border border-purple-400/30 text-center">
