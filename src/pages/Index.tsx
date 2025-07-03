@@ -10,7 +10,7 @@ import type { Product } from '@/types/product';
 const Index = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 250]);
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 350]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   // Check for shared product in URL
