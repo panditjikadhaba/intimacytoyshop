@@ -5,6 +5,7 @@ export interface Product {
   minPrice: number;
   maxPrice: number;
   priceRange: string;
+  packaging?: string;
   photo?: string;
   video?: string;
 }

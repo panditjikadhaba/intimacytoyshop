@@ -12,6 +12,7 @@ export const products: Product[] = [
   {
     sku: "V02",
     details: "3KG",
+    packaging: "4 Cartons Contain 24 Boxes (6 Boxes per Carton)",
     features: "7 Vibration Modes + 3-Language Voice Interaction (Multi-Sensory Pleasure Experience)",
     minPrice: 270,
     maxPrice: 270,
@@ -28,6 +29,7 @@ export const products: Product[] = [
   {
     sku: "V04",
     details: "3.1KG",
+    packaging: "5 Cartons Contain 30 Boxes (6 Boxes per Carton)",
     features: "3 Intensity Levels + 7 Vibration Modes with 4-Language Voice Function",
     minPrice: 280,
     maxPrice: 280,
@@ -44,6 +46,7 @@ export const products: Product[] = [
   {
     sku: "V06",
     details: "20cm*6cm 380G",
+    packaging: "30 Boxes",
     features: "Thickened Manual Dildo (Made of Liquid Silicone Material)",
     minPrice: 130,
     maxPrice: 130,
